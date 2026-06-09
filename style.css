@@ -1,0 +1,493 @@
+/* =========================
+   RESET & BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #0f0f0f;
+  color: white;
+  min-height: 100vh;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+  animation: pageFadeIn 0.3s ease;
+}
+
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero-text {
+  max-width: 700px;
+  margin: 25px auto;
+  color: #d4d4d4;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+#particles {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+h1 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-family: "Orbitron", sans-serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: #b7ffb7;
+  margin-bottom: 40px;
+}
+
+/* =========================
+   LOGO
+========================= */
+.logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 24px;
+  margin-bottom: 20px;
+  box-shadow:
+    0 0 20px rgba(0, 255, 100, 0.4),
+    0 0 40px rgba(0, 255, 100, 0.25),
+    0 0 80px rgba(0, 255, 100, 0.15);
+  animation: logoGlow 3s ease-in-out infinite;
+}
+
+@keyframes logoGlow {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow:
+      0 0 20px rgba(0, 255, 100, 0.4),
+      0 0 40px rgba(0, 255, 100, 0.25),
+      0 0 80px rgba(0, 255, 100, 0.15);
+  }
+  50% {
+    transform: scale(1.04);
+    box-shadow:
+      0 0 30px rgba(0, 255, 100, 0.7),
+      0 0 60px rgba(0, 255, 100, 0.4),
+      0 0 120px rgba(0, 255, 100, 0.25);
+  }
+}
+
+/* =========================
+   STORE BUTTONS
+========================= */
+.store-buttons,
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+
+.buttons {
+  margin: 30px 0;
+}
+
+.store-btn {
+  font-family: "Orbitron", sans-serif;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 180px;
+  padding: 14px 28px;
+  border-radius: 12px;
+  background: #107c10;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  animation:
+    buttonEntrance 0.7s ease forwards,
+    buttonGlow 3s ease-in-out infinite;
+  cursor: pointer;
+  transition:
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.store-btn:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.store-btn:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.store-btn:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.store-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transform: skewX(-25deg);
+}
+
+.store-btn:hover::before {
+  animation: shine 0.8s ease;
+}
+
+.store-btn i {
+  transition: transform 0.3s;
+}
+
+.store-btn:hover i {
+  transform: scale(1.2) rotate(-10deg);
+}
+
+.store-btn:hover {
+  transform: translateY(-8px) scale(1.06);
+  background: #16a34a;
+  box-shadow:
+    0 0 20px rgba(0, 255, 100, 0.4),
+    0 0 40px rgba(0, 255, 100, 0.3),
+    0 0 80px rgba(0, 255, 100, 0.2);
+}
+
+.store-btn:active {
+  transform: translateY(-2px) scale(1.02);
+}
+
+@keyframes buttonEntrance {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes buttonGlow {
+  0%,
+  100% {
+    box-shadow:
+      0 4px 12px rgba(0, 0, 0, 0.15),
+      0 0 8px rgba(255, 255, 255, 0.15);
+  }
+
+  50% {
+    box-shadow:
+      0 4px 12px rgba(0, 0, 0, 0.15),
+      0 0 10px rgba(255, 255, 255, 0.2),
+      0 0 25px rgba(0, 255, 100, 0.2);
+  }
+}
+
+@keyframes shine {
+  from {
+    left: -150%;
+  }
+  to {
+    left: 200%;
+  }
+}
+
+.store-btn {
+  animation:
+    buttonEntrance 0.7s ease forwards,
+    buttonGlow 3s ease-in-out infinite,
+    buttonPulse 3s ease-in-out infinite;
+}
+
+@keyframes buttonPulse {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+
+  50% {
+    filter: brightness(1.12);
+  }
+}
+
+/* =========================
+   FEATURE CARDS
+========================= */
+.features {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.card {
+  width: 280px;
+  background: #1b1b1b;
+  border: 1px solid rgba(34, 197, 94, 0.15);
+  border-radius: 20px;
+  padding: 30px 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  transition:
+    transform 0.3s,
+    border-color 0.3s,
+    box-shadow 0.3s;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  transition: 0.8s;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  border-color: #00ff66;
+  box-shadow:
+    0 0 15px rgba(0, 255, 100, 0.3),
+    0 0 30px rgba(0, 255, 100, 0.2),
+    0 0 50px rgba(0, 255, 100, 0.1);
+}
+
+.card:hover::before {
+  top: 100%;
+  left: 100%;
+}
+
+.card h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.card h4 {
+  font-family: "Orbitron", sans-serif;
+  margin-bottom: 12px;
+  color: #4ade80;
+  letter-spacing: 1px;
+}
+
+.card p {
+  color: #d4d4d4;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* =========================
+   COMING SOON PAGE
+========================= */
+.coming-soon {
+  max-width: 700px;
+  margin: 100px auto;
+  padding: 40px;
+  text-align: center;
+  background: #171717;
+  border: 1px solid #00aa22;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 170, 34, 0.25);
+}
+
+.coming-soon h1 {
+  font-family: "Orbitron", sans-serif;
+  color: #5cff88;
+  font-size: 42px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.coming-soon p {
+  color: #d5d5d5;
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.back-btn {
+  display: inline-block;
+  background: #00aa22;
+  color: white;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-weight: bold;
+  transition:
+    background 0.3s,
+    transform 0.3s;
+}
+
+.back-btn:hover {
+  background: #00cc33;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   PRIVACY PAGE
+========================= */
+.privacy-container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 40px;
+  background: #181818;
+  border: 1px solid #00cc44;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 204, 68, 0.15);
+}
+
+.privacy-container h1 {
+  font-family: "Orbitron", sans-serif;
+  color: #00ff66;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.privacy-container h2 {
+  font-family: "Orbitron", sans-serif;
+  color: #00ff66;
+  letter-spacing: 1px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.privacy-container p,
+.privacy-container li {
+  color: #d0d0d0;
+  line-height: 1.8;
+}
+
+.privacy-container ul {
+  padding-left: 25px;
+}
+
+.privacy-container a {
+  color: #fbfdfc;
+  text-decoration: none;
+}
+
+.privacy-container a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  margin-top: 210px;
+  color: #d4d4d4;
+  font-size: 15px;
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: #4ade80;
+  font-weight: 600;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .store-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .store-btn {
+    width: 250px;
+  }
+}
+
+/* =========================
+   GPU Acceleration
+========================= */
+
+.store-btn,
+.card,
+.logo,
+.coming-soon,
+.privacy-container {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}

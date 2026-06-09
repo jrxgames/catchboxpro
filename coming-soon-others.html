@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coming Soon - Other Stores</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div id="particles"></div>
+    <div class="coming-soon">
+      <h1>
+        <i class="fa-solid fa-store"></i>
+        Coming Soon
+      </h1>
+
+      <p>
+        Catch Box Pro will be available on additional app stores soon.
+        <br /><br />
+        Stay tuned for future updates from JRX Games.
+      </p>
+
+      <a href="index.html" class="back-btn page-link"> Back To Home </a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <script>
+      tsParticles.load("particles", {
+        particles: {
+          number: {
+            value: 80,
+          },
+
+          color: {
+            value: "#00ff66",
+          },
+
+          opacity: {
+            value: 1,
+          },
+
+          size: {
+            value: 2.5,
+          },
+
+          move: {
+            enable: true,
+            speed: 2,
+          },
+
+          links: {
+            enable: true,
+            color: "#00ff66",
+            opacity: 0.75,
+          },
+        },
+      });
+    </script>
+    <script>
+      document.querySelectorAll(".page-link").forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const destination = this.href;
+
+          document.body.style.opacity = "0";
+
+          setTimeout(() => {
+            window.location.href = destination;
+          }, 200);
+        });
+      });
+    </script>
+  </body>
+</html>

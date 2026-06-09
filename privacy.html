@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy - Catch Box Pro</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="particles"></div>
+    <div class="privacy-container">
+      <h1>Privacy Policy</h1>
+
+      <p><strong>JRX Games</strong></p>
+      <p><strong>Effective Date:</strong> May 2026</p>
+
+      <p>
+        JRX Games built the <strong>Catch Box Pro</strong> app as a Free app.
+        This SERVICE is provided by JRX Games at no cost and is intended for use
+        as is.
+      </p>
+
+      <p>
+        This page is used to inform visitors regarding our policies with the
+        collection, use, and disclosure of Personal Information if anyone
+        decides to use our Service.
+      </p>
+
+      <h2>1. Information Collection and Use</h2>
+
+      <p>
+        Catch Box Pro does not collect any personally identifiable information
+        directly.
+      </p>
+
+      <p>
+        However, the app uses third-party services that may collect information
+        used to identify you.
+      </p>
+
+      <h2>2. Third-Party Services</h2>
+
+      <p>The app uses the following third-party services:</p>
+
+      <ul>
+        <li>Google AdMob (for advertisements)</li>
+        <li>Google Play Services</li>
+      </ul>
+
+      <p>These services may collect:</p>
+
+      <ul>
+        <li>Device information</li>
+        <li>IP address</li>
+        <li>Advertising ID</li>
+        <li>App usage data</li>
+      </ul>
+
+      <p>For more information, please review:</p>
+
+      <p>
+        Google Privacy Policy:
+        <br /><br />
+        <a href="https://policies.google.com/privacy" target="_blank">
+          https://policies.google.com/privacy
+        </a>
+      </p>
+
+      <h2>3. Advertisements</h2>
+
+      <p>Catch Box Pro displays ads provided by Google AdMob.</p>
+
+      <p>
+        AdMob may use cookies and mobile identifiers to serve personalized and
+        non-personalized advertisements.
+      </p>
+
+      <p>
+        Users can opt out of personalized ads through their device settings.
+      </p>
+
+      <h2>4. Data Security</h2>
+
+      <p>We value your trust in providing your information.</p>
+
+      <p>
+        While we do not collect personal data directly, third-party services may
+        process data securely according to their own privacy policies and
+        security practices.
+      </p>
+
+      <h2>5. Children's Privacy</h2>
+
+      <p>Catch Box Pro is suitable for general audiences.</p>
+
+      <p>
+        We do not knowingly collect personally identifiable information from
+        children under the age of 13.
+      </p>
+
+      <p>
+        If you are a parent or guardian and believe your child has provided
+        personal information, please contact us so that appropriate action can
+        be taken.
+      </p>
+
+      <h2>6. Changes to This Privacy Policy</h2>
+
+      <p>We may update this Privacy Policy from time to time.</p>
+
+      <p>You are advised to review this page periodically for any changes.</p>
+
+      <p>
+        Any updates will be posted on this page and become effective immediately
+        after publication.
+      </p>
+
+      <h2>7. Contact Us</h2>
+
+      <p>
+        If you have any questions or suggestions regarding this Privacy Policy,
+        please contact us:
+      </p>
+
+      <p>📧 <strong>contact.jrxgames@gmail.com</strong></p>
+
+      <br /><br />
+
+      <a href="index.html" class="back-btn page-link"> Back to Home </a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <script>
+      tsParticles.load("particles", {
+        particles: {
+          number: {
+            value: 80,
+          },
+
+          color: {
+            value: "#00ff66",
+          },
+
+          opacity: {
+            value: 1,
+          },
+
+          size: {
+            value: 2.5,
+          },
+
+          move: {
+            enable: true,
+            speed: 2,
+          },
+
+          links: {
+            enable: true,
+            color: "#00ff66",
+            opacity: 0.75,
+          },
+        },
+      });
+    </script>
+    <script>
+      document.querySelectorAll(".page-link").forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const destination = this.href;
+
+          document.body.style.opacity = "0";
+
+          setTimeout(() => {
+            window.location.href = destination;
+          }, 200);
+        });
+      });
+    </script>
+  </body>
+</html>

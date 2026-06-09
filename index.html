@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catch Box Pro | JRX Games</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome for App Store / Play Store icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Logo -->
+      <img src="assets/catchboxpro-logo.png" alt="Catch Box Pro" class="logo" />
+
+      <h1>Catch Box Pro</h1>
+
+      <p class="subtitle">By JRX Games</p>
+
+      <p class="hero-text">
+        Fast-paced arcade action. Challenge friends, beat records, and become
+        the ultimate Catch Box champion.
+      </p>
+
+      <!-- Store Buttons -->
+      <div class="store-buttons">
+        <a class="store-btn page-link" href="coming-soon-ios.html">
+          <i class="fa-brands fa-apple"></i>
+          App Store
+        </a>
+
+        <a
+          class="store-btn"
+          href="https://play.google.com/store/apps/details?id=com.jrxgames.catchboxpro"
+          target="_blank"
+        >
+          <i class="fa-brands fa-google-play"></i>
+          Google Play
+        </a>
+
+        <a class="store-btn page-link" href="coming-soon-others.html">
+          <i class="fa-solid fa-store"></i>
+          Others Stores
+        </a>
+      </div>
+
+      <!-- Features -->
+
+      <div class="features">
+        <div class="card">
+          <h3>🎯</h3>
+
+          <h4>Single Player</h4>
+
+          <p>Beat your high score and improve your reflexes.</p>
+        </div>
+
+        <div class="card">
+          <h3>👥</h3>
+
+          <h4>Multiplayer</h4>
+
+          <p>Challenge friends and compete for victory.</p>
+        </div>
+
+        <div class="card">
+          <h3>⏱️</h3>
+
+          <h4>Time Modes</h4>
+
+          <p>Choose from 10 to 60 second matches.</p>
+        </div>
+      </div>
+
+      <!-- Footer -->
+
+      <footer>
+        <p>© 2026 JRX Games</p>
+
+        <div class="footer-links">
+          <a href="privacy.html" class="page-link"> Privacy Policy </a>
+
+          <span>•</span>
+
+          <a href="mailto:contact.jrxgames@gmail.com"> Support </a>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      function showComingSoon() {
+        alert("Catch Box Pro\n\nComing Soon on iOS.");
+      }
+    </script>
+    <div id="particles"></div>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+    <script>
+      tsParticles.load("particles", {
+        particles: {
+          number: {
+            value: 80,
+          },
+
+          color: {
+            value: "#00ff66",
+          },
+
+          opacity: {
+            value: 1,
+          },
+
+          size: {
+            value: 2.5,
+          },
+
+          move: {
+            enable: true,
+            speed: 2,
+          },
+
+          links: {
+            enable: true,
+            color: "#00ff66",
+            opacity: 0.75,
+          },
+        },
+      });
+    </script>
+    <script>
+      document.querySelectorAll(".page-link").forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const destination = this.href;
+
+          document.body.style.opacity = "0";
+
+          setTimeout(() => {
+            window.location.href = destination;
+          }, 200);
+        });
+      });
+    </script>
+  </body>
+</html>
